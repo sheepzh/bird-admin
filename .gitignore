@@ -1,0 +1,34 @@
+back/target/
+!bacl/.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+back/.mvn/*
+~/*
+
+### STS ###
+back/.apt_generated
+back/.classpath
+back/.factorypath
+back/.project
+back/.settings
+back/.springBeans
+back/.sts4-cache
+
+### IntelliJ IDEA ###
+back/.idea
+back/.ideaDataSources
+back/*.iws
+back/*.iml
+back/*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+fore/dist/
+fore/dist.*
+/nbdist/
+/.nb-gradle/
+fore/build/
+
+### VS Code ###
+fore/.vscode/

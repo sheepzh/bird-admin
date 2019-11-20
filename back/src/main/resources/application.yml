@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:mysql:
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    username:
+  profiles:
+    active: pro
+  servlet:
+    multipart:
+      max-file-size: 1MB
+server:
+  port: 11233
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.bird.model.entity
+  configuration:
+    # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # debug 用
+    map-underscore-to-camel-case: true # 下划线驼峰互转
+pagehelper:
+  # 修改为自己的数据库
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+
+# 自定义属性
+# memcached服务器地址及端口，使用xmemcache库进行链接。集群地址之间使用一个空格分隔
+memcache:
+  addresses: "localhost:11211"
+# 上传的文件存放的路径
+upload-file:
+  path: /etc/files/

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="context1">
+        <!-- 配置pojo的序列化 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+        <jdbcConnection connectionURL="jdbc:mysql://cdb-m82seyte.bj.tencentcdb.com:10176/bird_demo"
+                        driverClass="com.mysql.jdbc.Driver" password="1996ZHYzhy" userId="root"/>
+
+        <javaModelGenerator targetPackage="com.bird.model.entity"
+                            targetProject="src/main/java">
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="src/main/resources"/>
+
+        <javaClientGenerator targetPackage="com.bird.dao"
+                             targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+        <!--系统表开始-->
+
+        <table domainObjectName="SystemPermissionNode" tableName="T_SYSTEM_PERMISSION_NODE" enableCountByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true">
+        </table>
+
+        <table domainObjectName="SystemPermissionRole" tableName="T_SYSTEM_PERMISSION_ROLE" enableCountByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true">
+        </table>
+
+        <table domainObjectName="SystemRole" tableName="T_SYSTEM_ROLE" enableCountByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true">
+        </table>
+
+        <table domainObjectName="SystemRoute" tableName="T_SYSTEM_ROUTE" enableCountByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true">
+        </table>
+
+        <table domainObjectName="SystemRouteRole" tableName="T_SYSTEM_ROUTE_ROLE" enableCountByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true">
+        </table>
+
+        <table domainObjectName="SystemSequence" tableName="T_SYSTEM_SEQUENCE" enableCountByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true">
+        </table>
+        <!--系统表结束-->
+
+        <!--业务公共表开始-->
+        <table domainObjectName="Attachment" tableName="T_ATTACHMENT" enableCountByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true">
+        </table>
+
+        <table domainObjectName="Staff" tableName="T_STAFF" enableCountByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true">
+        </table>
+
+        <table domainObjectName="StaffRole" tableName="T_STAFF_ROLE" enableCountByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true">
+        </table>
+
+        <table domainObjectName="StaffActionLog" tableName="T_STAFF_ACTION_LOG" enableCountByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true">
+        </table>
+        <!--业务公共表结束-->
+        <!--业务表开始-->
+        <table domainObjectName="Inform" tableName="T_INFORM" enableCountByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true">
+        </table>
+        <!--业务表结束-->
+    </context>
+</generatorConfiguration>

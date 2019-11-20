@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "upload-file.path",
+      "type": "java.lang.String",
+      "description": "文件保存地址"
+    },
+    {
+      "name": "memcache.addresses",
+      "type": "java.lang.String",
+      "description": "memcached服务器地址"
+    }
+  ]
+}
