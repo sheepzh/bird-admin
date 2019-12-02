@@ -11,3 +11,8 @@
 + 用户操作日志
 
 ## [线上demo](http://148.70.16.14:8080)
+
+# LICENSE 
+
+MIT license.
+Copyright (c) 2019 zhy
