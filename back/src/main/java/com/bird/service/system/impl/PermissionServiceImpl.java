@@ -93,10 +93,10 @@ public class PermissionServiceImpl implements IPermissionService {
         roleIds.forEach(r -> {
             SystemRole role = roleMapper.selectByPrimaryKey(r);
             if (role == null) {
-                throw new BirdException("角色不存在：ID=" + r);
+                throw new BirdOutException("角色不存在：ID=" + r);
             }
             if (role.getStatus() != IRoleService.NORMAL) {
-                throw new BirdException("状态非法：ID=" + r);
+                throw new BirdOutException("状态非法：ID=" + r);
             }
             SystemPermissionRole permissionRole = new SystemPermissionRole();
             permissionRole.setPermissionId(id);

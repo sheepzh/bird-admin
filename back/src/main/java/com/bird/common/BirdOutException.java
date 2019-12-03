@@ -10,7 +10,7 @@ public class BirdOutException extends RuntimeException {
     private String errorMsg;
 
     public BirdOutException(String msg) {
-        this(msg, 0, "内部错误");
+        this(msg, 0, msg);
     }
 
     public BirdOutException(String message, int errorCode, String errorMsg) {

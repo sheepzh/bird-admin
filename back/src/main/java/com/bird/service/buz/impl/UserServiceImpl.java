@@ -47,15 +47,15 @@ public class UserServiceImpl implements IUserService {
     public Staff login(String account, String password) {
         Staff staff = staffMapperExtend.selectByAccount(account);
         if (staff == null) {
-            throw new BirdException("用户不存在");
+            throw new BirdOutException("用户不存在");
         }
         if (!staff.getPassword().equals(password)) {
             throw new BirdOutException("用户密码不正确", PASSWORD_ERROR, PASSWORD_ERROR_MSG);
         }
         if (INVALID == staff.getStatus()) {
-            throw new BirdException("该账号已失效，请联系管理员");
+            throw new BirdOutException("该账号已失效，请联系管理员");
         } else if (FORBIDDEN == staff.getStatus()) {
-            throw new BirdException("该账号已被禁用");
+            throw new BirdOutException("该账号已被禁用");
         }
         staff.setLastLogin(new Date());
         staffMapper.updateByPrimaryKeySelective(staff);
@@ -75,7 +75,7 @@ public class UserServiceImpl implements IUserService {
                 staff.setPassword(newPsw);
             }
         } else {
-            throw new BirdException("缺少旧密码");
+            throw new BirdOutException("缺少旧密码");
         }
         StaffExample example = new StaffExample();
         StaffExample.Criteria criteria = example.createCriteria();
@@ -153,7 +153,7 @@ public class UserServiceImpl implements IUserService {
         assertNotRoot(account);
         Staff staff = staffMapperExtend.selectByAccount(account);
         if (staff == null) {
-            throw new BirdException("用户不存在");
+            throw new BirdOutException("用户不存在");
         }
         // 删除原有角色
         StaffRoleExample example = new StaffRoleExample();

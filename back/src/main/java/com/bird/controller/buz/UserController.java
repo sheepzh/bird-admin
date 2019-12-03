@@ -1,6 +1,6 @@
 package com.bird.controller.buz;
 
-import com.bird.common.BirdException;
+import com.bird.common.BirdOutException;
 import com.bird.common.PageInfo;
 import com.bird.common.ResultCode;
 import com.bird.controller.BaseController;
@@ -181,7 +181,7 @@ public class UserController extends BaseController {
         return responseWrap(r -> {
             String operatorAccount = assertAdmin(request);
             if (Objects.equals(account, operatorAccount)) {
-                throw new BirdException("不可禁用自身");
+                throw new BirdOutException("不可禁用自身");
             }
             // 禁用
             userService.forbidden(account);
@@ -247,7 +247,7 @@ public class UserController extends BaseController {
         Staff user = tokenService.map2User(request);
         if (user == null || user.getId() == null ||
                 roleService.listRolesByStaff(user.getId()).stream().map(SystemRole::getName).noneMatch("admin"::equals)) {
-            throw new BirdException("没有操作权限");
+            throw new BirdOutException("没有操作权限");
         }
         return user.getAccount();
     }
@@ -261,7 +261,7 @@ public class UserController extends BaseController {
     private void assertSelf(HttpServletRequest request, String account) {
         Staff user = tokenService.map2User(request);
         if (user == null || !account.equals(user.getAccount())) {
-            throw new BirdException("非本人操作");
+            throw new BirdOutException("非本人操作");
         }
     }
 }

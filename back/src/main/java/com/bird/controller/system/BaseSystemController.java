@@ -1,6 +1,6 @@
 package com.bird.controller.system;
 
-import com.bird.common.BirdException;
+import com.bird.common.BirdOutException;
 import com.bird.config.Config;
 import com.bird.controller.BaseController;
 import com.bird.model.entity.SystemRole;
@@ -26,7 +26,7 @@ public class BaseSystemController extends BaseController {
      * 校验是否root用户进行操作
      *
      * @param request 操作请求
-     * @throws BirdException 不是root用户时抛出
+     * @throws BirdOutException 不是root用户时抛出
      */
     void assertRoot(HttpServletRequest request) {
         boolean notRoot = roleService.listRolesByStaff(tokenService.map2User(request).getId())
@@ -34,7 +34,7 @@ public class BaseSystemController extends BaseController {
                 .map(SystemRole::getName)
                 .noneMatch("root"::equals);
         if (notRoot) {
-            throw new BirdException("无权限!");
+            throw new BirdOutException("无权限!");
         }
     }
 
@@ -44,7 +44,7 @@ public class BaseSystemController extends BaseController {
     void assertDev() {
         String dev = "dev";
         if (!Objects.equals(config.active, dev)) {
-            throw new BirdException("无权限：" + config.active + "");
+            throw new BirdOutException("无权限：" + config.active + "");
         }
     }
 }
