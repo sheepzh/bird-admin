@@ -44,10 +44,11 @@ public interface InformMapperExtend {
             "  <if test='endDate!=null'>" +
             "    and create_time&lt;#{endDate}" +
             "  </if>" +
-            "  order by create_date desc" +
+            "  order by" +
             "  <if test='topFirst!=null and topFirst==true'>" +
-            "    ,top desc" +
+            "    top desc, " +
             "  </if>" +
+            "  create_date desc" +
             "</script>")
     List<Inform> selectSimple(@Param("status") Short status,
                               @Param("title") String title,
