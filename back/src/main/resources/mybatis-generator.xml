@@ -6,8 +6,8 @@
         <!-- 配置pojo的序列化 -->
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
 
-        <jdbcConnection connectionURL="jdbc:mysql://cdb-m82seyte.bj.tencentcdb.com:10176/bird_demo"
-                        driverClass="com.mysql.jdbc.Driver" password="1996ZHYzhy" userId="root"/>
+        <jdbcConnection connectionURL="jdbc:mysql://***"
+                        driverClass="com.mysql.jdbc.Driver" password="***" userId="***"/>
 
         <javaModelGenerator targetPackage="com.bird.model.entity"
                             targetProject="src/main/java">
