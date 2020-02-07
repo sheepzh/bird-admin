@@ -17,13 +17,13 @@ INSERT INTO T_SYSTEM_ROUTE (path, parent, async, des) VALUES ('/root/role', 1, 1
 INSERT INTO T_SYSTEM_ROUTE_ROLE (route_id, role_id) SELECT t1.id, t2.id FROM T_SYSTEM_ROUTE t1, T_SYSTEM_ROLE t2 WHERE t1.path LIKE '/root%' and t2.name = 'root'
 
 # 添加前端组件权限点
-INSERT INTO bird_demo.T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('button_add', '添加用户按钮', 1, 'UserManagement');
-INSERT INTO bird_demo.T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('button_forbidden', '禁用用户按钮', 1, 'UserManagement');
-INSERT INTO bird_demo.T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('button_role_setting', '角色配置按钮', 1, 'UserManagement');
-INSERT INTO bird_demo.T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('button_password_reset', '重置密码按钮', 1, 'UserManagement');
-INSERT INTO bird_demo.T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('button_lift', '用户解禁按钮', 1, 'UserManagement');
-INSERT INTO bird_demo.T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('button_dimission', '用户离职按钮', 1, 'UserManagement');
-INSERT INTO bird_demo.T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('tab_add', '新增公告tab栏', 1, 'InformManagement');
-INSERT INTO bird_demo.T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('top_and_cancel', '置顶公告以及取消置顶', 1, 'InformTable');
-INSERT INTO bird_demo.T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('cancel', '撤销公告', 1, 'InformTable');
-INSERT INTO bird_demo.T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('outdate', '设置公告过期', 1, 'InformTable');
+INSERT INTO T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('button_add', '添加用户按钮', 1, 'UserManagement');
+INSERT INTO T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('button_forbidden', '禁用用户按钮', 1, 'UserManagement');
+INSERT INTO T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('button_role_setting', '角色配置按钮', 1, 'UserManagement');
+INSERT INTO T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('button_password_reset', '重置密码按钮', 1, 'UserManagement');
+INSERT INTO T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('button_lift', '用户解禁按钮', 1, 'UserManagement');
+INSERT INTO T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('button_dimission', '用户离职按钮', 1, 'UserManagement');
+INSERT INTO T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('tab_add', '新增公告tab栏', 1, 'InformManagement');
+INSERT INTO T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('top_and_cancel', '置顶公告以及取消置顶', 1, 'InformTable');
+INSERT INTO T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('cancel', '撤销公告', 1, 'InformTable');
+INSERT INTO T_SYSTEM_PERMISSION_NODE (name, des, status, module) VALUES ('outdate', '设置公告过期', 1, 'InformTable');
